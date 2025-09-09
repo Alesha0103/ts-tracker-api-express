@@ -1,4 +1,4 @@
-import { IProject } from "../models/user-model";
+import { IProject } from "../types";
 
 export default class ProjectDto {
     id;

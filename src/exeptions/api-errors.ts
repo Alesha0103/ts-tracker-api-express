@@ -1,3 +1,5 @@
+import { AppError } from "../types";
+
 export default class ApiError extends Error {
     status: number;
     errors: any[];
@@ -11,7 +13,7 @@ export default class ApiError extends Error {
     }
 
     static UnathorizedError() {
-        return new ApiError(401, "NOT_AUTORIZED");
+        return new ApiError(401, AppError.NOT_AUTORIZED);
     }
 
     static BadRequest(message: string, errors: any[] = []) {

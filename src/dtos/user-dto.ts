@@ -1,4 +1,5 @@
-import ProjectDto, { IUser } from "../models/user-model";
+import { IUser } from "../types";
+import ProjectDto from "./project-dto";
 
 export default class UserDto {
     email;

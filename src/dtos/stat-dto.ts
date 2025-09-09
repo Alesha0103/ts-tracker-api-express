@@ -1,4 +1,4 @@
-import { IStat } from "../models/user-model";
+import { IStat } from "../types";
 
 export default class StatDto {
     id;
