@@ -82,7 +82,7 @@ class UserService {
 
     async refresh(refreshToken: string) {
         if (!refreshToken) {
-            throw ApiError.UnathorizedError();
+            throw ApiError.UnathorizedError(AppError.TOKEN_EXPIRED);
         }
 
         const userData = tokenService.validateRefreshToken(refreshToken);

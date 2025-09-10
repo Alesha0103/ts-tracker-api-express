@@ -8,12 +8,7 @@ export default function authMiddleware(
     next: NextFunction
 ): void {
     try {
-        const authHeader = req.headers.authorization;
-        if (!authHeader) {
-            return next(ApiError.UnathorizedError());
-        }
-
-        const accessToken = authHeader.split(" ")[1];
+        const accessToken = req.cookies.accessToken;
         if (!accessToken) {
             return next(ApiError.UnathorizedError());
         }

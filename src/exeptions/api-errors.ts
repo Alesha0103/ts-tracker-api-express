@@ -12,8 +12,8 @@ export default class ApiError extends Error {
         Object.setPrototypeOf(this, ApiError.prototype);
     }
 
-    static UnathorizedError() {
-        return new ApiError(401, AppError.NOT_AUTORIZED);
+    static UnathorizedError(message?: string) {
+        return new ApiError(401, message || AppError.NOT_AUTORIZED);
     }
 
     static BadRequest(message: string, errors: any[] = []) {
